@@ -64,18 +64,18 @@ user_input = input('Do you want to search for a car? Type Quit for quit. ')
 def main():
     init()
     if transmission_type.lower() == 'manual':
-        url = requests.get(f'https://www.ebay.com/sch/i.html?_sacat=6001&makeval={car_make}&modelval={car_model}&LH_ItemCondition=3000%7C1000%7C2500&_nkw={car_make}+{car_model}&_fspt=1&_ipg=240&Transmission=Manual&_dcat=6236&_stpos=11226&LH_PrefLoc=99&_sop=3').text
+        url = requests.get(f'https://www.ebay.com/sch/i.html?_sacat=6001&makeval={car_make}&modelval={car_model}&LH_ItemCondition=3000%7C1000%7C2500&_nkw={car_make}+{car_model}&_fspt=1&_ipg=240&Transmission=Manual&_dcat=6236&LH_PrefLoc=99&_sop=3').text
         global soup
         soup = BeautifulSoup(url, "html.parser")
         finding_listings()
         return
     elif transmission_type.lower() == 'automatic':
-            url = requests.get(f'https://www.ebay.com/sch/i.html?_sacat=6001&makeval={car_make}&modelval={car_model}&LH_ItemCondition=3000%7C1000%7C2500&_nkw={car_make}+{car_model}&_fspt=1&_ipg=240&Transmission=Automatic&_dcat=6236&_stpos=11226&LH_PrefLoc=99&_sop=3').text
+            url = requests.get(f'https://www.ebay.com/sch/i.html?_sacat=6001&makeval={car_make}&modelval={car_model}&LH_ItemCondition=3000%7C1000%7C2500&_nkw={car_make}+{car_model}&_fspt=1&_ipg=240&Transmission=Automatic&_dcat=6236&LH_PrefLoc=99&_sop=3').text
             soup = BeautifulSoup(url, "html.parser")
             finding_listings()
             return
     else:
-            url = requests.get(f'https://www.ebay.com/sch/i.html?_sacat=6001&makeval={car_make}&modelval={car_model}&LH_ItemCondition=3000%7C1000%7C2500&_nkw={car_make}+{car_model}&_fspt=1&_ipg=240&_dcat=6236&_stpos=11226&LH_PrefLoc=99&_sop=3').text
+            url = requests.get(f'https://www.ebay.com/sch/i.html?_sacat=6001&makeval={car_make}&modelval={car_model}&LH_ItemCondition=3000%7C1000%7C2500&_nkw={car_make}+{car_model}&_fspt=1&_ipg=240&_dcat=6236&LH_PrefLoc=99&_sop=3').text
             soup = BeautifulSoup(url, "html.parser")
             finding_listings()
             return
